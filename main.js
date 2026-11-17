@@ -6,37 +6,20 @@ const commodities = [
   { name: "豆一", code: "a2601", price: 4186, change: 0.62, volume: 86420, openInterest: 142330, links: ["国际", "期权", "夜盘"], seed: "soybean" },
 ];
 
-const news = {
-  notice: [
-    { hour_minute: "09:41", title: "美湾大豆升贴水持稳，近月船期询盘增加", meta: "10月30日 09:41" },
-    { hour_minute: "09:16", title: "南美降水带南压，阿根廷北部墒情改善", meta: "10月30日 09:16" },
-    { hour_minute: "08:52", title: "豆粕基差华东持平，华南小幅走弱", meta: "10月30日 08:52" },
-    { hour_minute: "08:20", title: "青岛到港预报下周集中，油厂开机维持高位", meta: "10月30日 08:20" },
-  ],
-  daily: [
-    { title: "采购中心简报：压榨利润与到港节奏", meta: "2026年10月30日" },
-    { title: "采购中心简报：美豆出口检验偏强", meta: "2026年10月29日" },
-    { title: "图标简报：豆油跟涨，现货成交一般", meta: "2026年10月28日" },
-  ],
-  brief: [
-    { title: "美国中西部预报转干，播种窗口重新打开", meta: "路透财经早报 · 10月30日" },
-    { title: "国内油厂豆粕库存连续第二周下降", meta: "格隆汇快讯 · 10月30日" },
-    { title: "爱荷华本周降水偏多，出苗进度需要再看", meta: "mysteel · 10月30日" },
-  ],
-};
+const news = [
+  { title: "美湾大豆升贴水持稳，近月船期询盘增加", meta: "10月30日 09:41" },
+  { title: "南美降水带南压，阿根廷北部墒情改善", meta: "10月30日 09:16" },
+  { title: "豆粕基差华东持平，华南小幅走弱", meta: "10月30日 08:52" },
+  { title: "青岛到港预报下周集中，油厂开机维持高位", meta: "10月30日 08:20" },
+];
 
-const photoSets = {
-  notice: ["harborcrane", "soyfield", "grainship"],
-  daily: ["briefingdesk", "soyoil", "qingdaoport"],
-  brief: ["weatherplain", "mealplant", "iowafield"],
-};
+const photos = ["harborcrane", "soyfield", "grainship"];
 
 const bento = document.getElementById("bento");
 const quoteList = document.getElementById("quoteList");
 const quotePhotos = document.getElementById("quotePhotos");
 let sortKey = null;
 let sortDir = null;
-let newsTab = "notice";
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 function formatVolume(n) {
@@ -69,10 +52,10 @@ function renderCommodities() {
 }
 
 function renderQuote() {
-  quoteList.innerHTML = news[newsTab].map((item) => (
+  quoteList.innerHTML = news.map((item) => (
     `<article><time>${item.meta}</time><p>${item.title}</p></article>`
   )).join("");
-  quotePhotos.innerHTML = photoSets[newsTab].map((seed) => (
+  quotePhotos.innerHTML = photos.map((seed) => (
     `<img src="https://picsum.photos/seed/${seed}/900/640" alt="" />`
   )).join("");
 }
@@ -84,18 +67,6 @@ function bindLayerDock() {
   orb.addEventListener("click", () => {
     const open = dock.classList.toggle("is-open");
     orb.setAttribute("aria-expanded", open ? "true" : "false");
-  });
-}
-
-function bindAccordion() {
-  const panels = [...document.querySelectorAll("[data-panel]")];
-  const open = (target) => {
-    panels.forEach((panel) => panel.classList.toggle("is-open", panel === target));
-  };
-  panels.forEach((panel) => {
-    panel.addEventListener("mouseenter", () => open(panel));
-    panel.addEventListener("focus", () => open(panel));
-    panel.addEventListener("click", () => open(panel));
   });
 }
 
@@ -118,62 +89,6 @@ document.querySelectorAll("[data-sort]").forEach((button) => {
   });
 });
 
-function setNewsTab(tab) {
-  if (tab === newsTab) return false;
-  newsTab = tab;
-  document.querySelectorAll(".news-tabs [data-tab]").forEach((el) => {
-    el.classList.toggle("is-active", el.dataset.tab === tab);
-  });
-  renderQuote();
-  return true;
-}
-
-document.querySelectorAll(".news-tabs [data-tab]").forEach((button) => {
-  button.addEventListener("click", () => {
-    const next = button.dataset.tab;
-    if (next === newsTab) return;
-    const swap = () => {
-      setNewsTab(next);
-    };
-    const gsap = window.gsap;
-    const panels = [quoteList, quotePhotos];
-    if (!gsap || reduceMotion) {
-      swap();
-      return;
-    }
-    gsap.to(panels, {
-      autoAlpha: 0,
-      y: 10,
-      duration: 0.2,
-      ease: "power2.in",
-      overwrite: true,
-      onComplete: () => {
-        swap();
-        quoteList.classList.add("is-revealed");
-        quotePhotos.classList.add("is-revealed");
-        gsap.set(panels, { autoAlpha: 1, y: 0 });
-        const rotations = [-6, 3, 7];
-        gsap.fromTo("#quoteList article",
-          { autoAlpha: 0, y: 18, clipPath: "inset(0 0 100% 0)" },
-          { autoAlpha: 1, y: 0, clipPath: "inset(0 0 0% 0)", duration: 0.6, ease: "expo.out", stagger: 0.06, overwrite: true },
-        );
-        [...quotePhotos.children].forEach((img, i) => {
-          const rot = rotations[i] ?? 0;
-          gsap.fromTo(img,
-            { autoAlpha: 0, y: 18, rotation: rot, scale: 0.92 },
-            { autoAlpha: 1, y: 0, rotation: rot, scale: 1, duration: 0.7, ease: "expo.out", delay: i * 0.06, overwrite: true },
-          );
-        });
-      },
-    });
-  });
-});
-
-document.querySelectorAll(".mega [data-tab], .drop [data-tab]").forEach((link) => {
-  link.addEventListener("click", () => setNewsTab(link.dataset.tab));
-});
-
-bindAccordion();
 bindLayerDock();
 renderQuote();
 renderCommodities();
@@ -252,9 +167,7 @@ function mountMotion() {
       quoteList.classList.add("is-revealed");
       quotePhotos.classList.add("is-revealed");
     }, 0);
-    tl.fromTo(".desire-lead", { y: 16, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.65 }, 0.18)
-      .fromTo(".news-tabs", { y: 12, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.55 }, 0.26)
-      .to("#quoteList article",
+    tl.to("#quoteList article",
         { y: 0, autoAlpha: 1, clipPath: "inset(0 0 0% 0)", duration: 0.75, stagger: 0.08 },
         0.16,
       );
@@ -279,15 +192,6 @@ function mountMotion() {
         { y: 0, autoAlpha: 1, clipPath: "inset(0% 0% 0% 0%)", duration: 0.95, stagger: 0.09 },
         0.14,
       );
-  });
-
-  chapter("#corridors", "top 82%", (tl) => {
-    riseLines(tl, "#corridors .inline-heading", 0);
-    tl.fromTo("#accordion .acc-panel",
-      { autoAlpha: 0, clipPath: "inset(0 100% 0 0)" },
-      { autoAlpha: 1, clipPath: "inset(0% 0% 0% 0%)", duration: 1.1, stagger: 0.12 },
-      0.1,
-    );
   });
 
   chapter(".action", "top 88%", (tl) => {

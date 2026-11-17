@@ -555,9 +555,9 @@ body.nav-locked { overflow: hidden; }
 .swatch.pin { background: #d97706; }
 .swatch.route { background: #e11d48; }
 
-.chapter { padding: 8rem 6vw; }
+.chapter { padding: 4.5rem 6vw; }
 @media (min-width: 768px) {
-  .chapter { padding: 12rem 6vw; }
+  .chapter { padding: 5.5rem 6vw; }
 }
 
 .inline-heading {
@@ -570,69 +570,7 @@ body.nav-locked { overflow: hidden; }
 }
 .desire-pin .inline-heading {
   font-size: clamp(30px, 3.1vw, 48px);
-  margin-bottom: 1.2rem;
-}
-
-.accordion {
-  display: flex;
-  height: min(72vh, 740px);
-  overflow: hidden;
-  border-radius: 0;
-}
-.acc-panel {
-  position: relative;
-  flex: 1 1 18%;
-  min-width: 0;
-  overflow: hidden;
-  cursor: pointer;
-  transition: flex 0.75s cubic-bezier(0.32, 0.72, 0, 1);
-}
-.acc-panel.is-open { flex: 2.6 1 46%; }
-.acc-panel { background: #1b2438; }
-.acc-panel img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.88;
-  filter: grayscale(0.55) contrast(1.2) saturate(0.7);
-  mix-blend-mode: luminosity;
-  transform: scale(1.04);
-  transition: transform 0.7s ease-out, filter 0.7s ease-out, opacity 0.7s ease-out;
-}
-.acc-panel.is-open img,
-.acc-panel:hover img {
-  transform: scale(1.1);
-  opacity: 1;
-  filter: grayscale(0.2) contrast(1.15) saturate(0.95);
-}
-.acc-copy {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 28px 24px 24px;
-  color: #fff;
-  background: linear-gradient(180deg, transparent, rgba(12, 16, 28, 0.78));
-}
-.acc-copy h3 {
-  margin: 0;
-  font-size: clamp(22px, 2vw, 34px);
-  font-weight: 500;
-  letter-spacing: -0.04em;
-}
-.acc-copy p {
-  max-width: 28ch;
-  margin: 10px 0 0;
-  opacity: 0;
-  transform: translateY(10px);
-  font-size: 15px;
-  line-height: 1.5;
-  transition: opacity 0.45s ease, transform 0.45s ease;
-}
-.acc-panel.is-open .acc-copy p,
-.acc-panel:hover .acc-copy p {
-  opacity: 0.92;
-  transform: none;
+  margin-bottom: 2.8rem;
 }
 
 .market-head {
@@ -747,26 +685,6 @@ body.nav-locked { overflow: hidden; }
   position: sticky;
   top: 96px;
 }
-.desire-lead {
-  margin: 0 0 1.8rem;
-  max-width: 32ch;
-  color: var(--muted);
-  font-size: 17px;
-  line-height: 1.6;
-}
-.news-tabs { display: flex; gap: 22px; margin-bottom: 28px; }
-.news-tabs button {
-  border: 0;
-  background: transparent;
-  padding: 0 0 8px;
-  color: var(--muted);
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  transition: color 0.35s ease, border-color 0.35s ease;
-}
-.news-tabs button.is-active { color: var(--blue); border-bottom-color: var(--blue); }
 .quote-photos { position: relative; height: 280px; }
 .quote-photos:empty { height: 0; }
 .quote-photos img {
@@ -813,7 +731,7 @@ body.nav-locked { overflow: hidden; }
   background: var(--ink);
   color: #fff;
   text-align: center;
-  padding: 8rem 6vw;
+  padding: 5rem 6vw;
 }
 .action h2 {
   max-width: 64rem;
@@ -852,9 +770,6 @@ body.nav-locked { overflow: hidden; }
   .desire-grid, .market-head { grid-template-columns: 1fr; }
   .desire-pin { position: static; }
   .quote-photos { min-height: 240px; }
-  .accordion { flex-direction: column; height: auto; }
-  .acc-panel, .acc-panel.is-open, .acc-panel:hover { flex: none; height: 180px; }
-  .acc-panel.is-open { height: 320px; }
   .card.span-4, .card.span-6 { grid-column: span 12; }
   .nav-bar {
     grid-template-columns: auto auto;
@@ -950,11 +865,7 @@ html.js-motion .hero-actions .btn,
 html.js-motion .globe-stage,
 html.js-motion .layer-dock,
 html.js-motion #news .inline-heading,
-html.js-motion .desire-lead,
-html.js-motion .news-tabs,
 html.js-motion .market-head,
-html.js-motion #corridors .inline-heading,
-html.js-motion #accordion .acc-panel,
 html.js-motion .action h2,
 html.js-motion .action .btn,
 html.js-motion #quoteList:not(.is-revealed) article,
@@ -965,7 +876,7 @@ html.js-motion #bento:not(.is-revealed) .card {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .btn, .acc-panel, .acc-panel img, .acc-copy p, .card-visual img {
+  .btn, .card-visual img {
     transition: none;
   }
   html.js-motion .display,
@@ -974,11 +885,7 @@ html.js-motion #bento:not(.is-revealed) .card {
   html.js-motion .globe-stage,
   html.js-motion .layer-dock,
   html.js-motion #news .inline-heading,
-  html.js-motion .desire-lead,
-  html.js-motion .news-tabs,
   html.js-motion .market-head,
-  html.js-motion #corridors .inline-heading,
-  html.js-motion #accordion .acc-panel,
   html.js-motion .action h2,
   html.js-motion .action .btn,
   html.js-motion #quoteList:not(.is-revealed) article,

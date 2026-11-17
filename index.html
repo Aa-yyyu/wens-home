@@ -15,7 +15,7 @@
       }, 2800);
     });
   </script>
-  <link rel="stylesheet" href="./styles.css?v=taste14" />
+  <link rel="stylesheet" href="./styles.css?v=taste18" />
   <script type="importmap">
     {
       "imports": {
@@ -89,35 +89,7 @@
 
           <a class="nav-link" href="#markets">平衡表</a>
 
-          <div class="nav-item has-mega">
-            <a class="nav-link" href="#news" aria-haspopup="true" aria-expanded="false" data-menu="brief">
-              行情简报
-              <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-            <div class="mega" role="menu" aria-label="行情简报">
-              <div class="mega-sheet">
-                <p class="mega-title">行情简报</p>
-                <div class="mega-grid">
-                  <div class="mega-col">
-                    <a class="mega-head" href="#news">概览<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6h7M6.5 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-                    <p>把天气、装船和基差收成三条可核对的判断。</p>
-                  </div>
-                  <div class="mega-col">
-                    <a class="mega-head" href="#news" data-tab="notice">实时快讯<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6h7M6.5 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-                    <p>盘中要闻、港口动态和突发提示。</p>
-                  </div>
-                  <div class="mega-col">
-                    <a class="mega-head" href="#news" data-tab="daily">每日简报<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6h7M6.5 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-                    <p>日度供需、压榨利润和到港节奏。</p>
-                  </div>
-                  <div class="mega-col">
-                    <a class="mega-head" href="#news" data-tab="brief">新闻早报<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6h7M6.5 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-                    <p>开盘前需要过一眼的重点资讯。</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <a class="nav-link" href="#news">行情简报</a>
 
           <div class="nav-item has-mega">
             <a class="nav-link" href="./dictionary.html" aria-haspopup="true" aria-expanded="false" data-menu="dict">
@@ -194,15 +166,8 @@
       <div class="desire-grid">
         <div class="desire-pin">
           <h2 class="inline-heading">
-            <span class="line"><span>这一周怎么买</span></span>
-            <span class="line"><span>看产区与到港</span></span>
+            <span class="line"><span>行情简报</span></span>
           </h2>
-          <p class="desire-lead">简报把天气、装船和基差收成三条可核对的判断。</p>
-          <div class="news-tabs" role="tablist">
-            <button type="button" class="is-active" data-tab="notice">实时快讯</button>
-            <button type="button" data-tab="daily">每日简报</button>
-            <button type="button" data-tab="brief">新闻早报</button>
-          </div>
           <div class="quote-photos" id="quotePhotos"></div>
         </div>
         <div class="quote-list" id="quoteList"></div>
@@ -219,40 +184,6 @@
         </div>
       </div>
       <div class="bento" id="bento"></div>
-    </section>
-
-    <section class="chapter corridors" id="corridors">
-      <h2 class="inline-heading">从产区到港口</h2>
-      <div class="accordion" id="accordion">
-        <article class="acc-panel is-open" data-panel tabindex="0">
-          <img src="https://picsum.photos/seed/gulfport/1600/1200" alt="" />
-          <div class="acc-copy">
-            <h3>美湾装船</h3>
-            <p>新奥尔良近月船期询盘增加，升贴水持稳。</p>
-          </div>
-        </article>
-        <article class="acc-panel" data-panel tabindex="0">
-          <img src="https://picsum.photos/seed/santosport/1600/1200" alt="" />
-          <div class="acc-copy">
-            <h3>巴西桑托斯</h3>
-            <p>压榨开机与装船窗口同步，关注南美降水南压。</p>
-          </div>
-        </article>
-        <article class="acc-panel" data-panel tabindex="0">
-          <img src="https://picsum.photos/seed/qingdaoharbor/1600/1200" alt="" />
-          <div class="acc-copy">
-            <h3>国内到港</h3>
-            <p>青岛下周集中到港，油厂开机维持高位。</p>
-          </div>
-        </article>
-        <article class="acc-panel" data-panel tabindex="0">
-          <img src="https://picsum.photos/seed/basisboard/1600/1200" alt="" />
-          <div class="acc-copy">
-            <h3>基差窗口</h3>
-            <p>豆粕基差华东持平，华南小幅走弱。</p>
-          </div>
-        </article>
-      </div>
     </section>
 
     <section class="chapter action">
@@ -272,6 +203,6 @@
   <script src="./vendor/gsap.min.js"></script>
   <script src="./vendor/ScrollTrigger.min.js"></script>
   <script src="./nav.js?v=mega3"></script>
-  <script type="module" src="./main.js?v=fix5"></script>
+  <script type="module" src="./main.js?v=fix8"></script>
 </body>
 </html>
