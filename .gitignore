@@ -1,0 +1,7 @@
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+.repo-url.txt
+.push-result.txt
+_push_after_auth.ps1

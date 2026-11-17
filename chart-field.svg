@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 640" fill="none">
+  <g stroke="#3a6f94" stroke-width="0.7" opacity="0.5">
+    <path d="M48 96h704M48 196h704M48 296h704M48 396h704M48 496h704"/>
+    <path d="M128 36v568M272 36v568M416 36v568M560 36v568M704 36v568"/>
+  </g>
+  <g stroke="#3a6f94" stroke-width="0.7" opacity="0.35">
+    <path d="M48 96h-10M48 196h-10M48 296h-10M48 396h-10M48 496h-10"/>
+    <path d="M128 36v-10M272 36v-10M416 36v-10M560 36v-10M704 36v-10"/>
+  </g>
+  <path d="M72 428C176 268 312 214 448 252C584 290 676 372 748 516" stroke="#2f8aa8" stroke-width="1.15" opacity="0.72"/>
+  <path d="M64 352C172 236 316 186 456 226C596 266 688 352 752 478" stroke="#2f8aa8" stroke-width="0.8" opacity="0.42"/>
+  <path d="M80 528C228 392 392 332 548 376C652 404 714 456 772 540" stroke="#1f6f88" stroke-width="1" stroke-dasharray="5 8" opacity="0.55"/>
+  <g stroke="#2f6f9a" stroke-width="0.95" opacity="0.7">
+    <path d="M272 296h-6m6 0h6m-6-6v12"/>
+    <path d="M416 196h-6m6 0h6m-6-6v12"/>
+    <path d="M560 396h-6m6 0h6m-6-6v12"/>
+  </g>
+</svg>

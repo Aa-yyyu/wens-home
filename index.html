@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>温氏采购</title>
+  <link rel="stylesheet" href="./vendor/fonts/google-fonts.css" />
+  <script>
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.documentElement.classList.add("js-motion");
+    }
+    window.addEventListener("load", () => {
+      window.setTimeout(() => {
+        if (!window.__motionReady) document.documentElement.classList.remove("js-motion");
+      }, 2800);
+    });
+  </script>
+  <link rel="stylesheet" href="./styles.css?v=taste14" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./vendor/three.module.js",
+        "three/addons/": "./vendor/addons/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <main>
+    <header class="nav-wrap" id="siteNav">
+      <nav class="nav-bar" aria-label="主导航">
+        <a class="brand" href="#top">
+          <img src="./wens-logo.png" alt="温氏采购" />
+        </a>
+
+        <div class="nav-links" id="navLinks">
+          <a class="nav-link is-current" href="#top">首页</a>
+
+          <div class="nav-item has-mega">
+            <a class="nav-link" href="#markets" aria-haspopup="true" aria-expanded="false" data-menu="overview">
+              数据总览
+              <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <div class="mega" role="menu" aria-label="数据总览">
+              <div class="mega-sheet">
+                <p class="mega-title">数据总览</p>
+                <div class="mega-grid">
+                  <div class="mega-col">
+                    <a class="mega-head" href="#markets">概览<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6h7M6.5 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    <p>把产区墒情、装船港口和到岸报价，放在同一张表上核对。</p>
+                  </div>
+                  <div class="mega-col">
+                    <a class="mega-head" href="#markets">蛋白类<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6h7M6.5 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    <a class="mega-link" href="./overview.html">国际大豆</a>
+                    <a class="mega-link" href="#markets">豆粕</a>
+                    <a class="mega-link" href="#markets">菜粕</a>
+                    <a class="mega-link" href="#markets">杂粕</a>
+                  </div>
+                  <div class="mega-col">
+                    <a class="mega-head" href="#markets">油脂类<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6h7M6.5 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    <a class="mega-link" href="#markets">豆油</a>
+                    <a class="mega-link" href="#markets">棕榈油</a>
+                  </div>
+                  <div class="mega-col">
+                    <a class="mega-head" href="#markets">能量类<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6h7M6.5 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    <a class="mega-link" href="#markets">玉米</a>
+                    <a class="mega-link" href="#markets">小麦</a>
+                  </div>
+                  <div class="mega-col">
+                    <a class="mega-head" href="#markets">生猪类<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6h7M6.5 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    <a class="mega-link" href="#markets">生猪</a>
+                  </div>
+                  <div class="mega-col">
+                    <a class="mega-head" href="#markets">小料类<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6h7M6.5 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    <a class="mega-link" href="#markets">小料</a>
+                  </div>
+                  <div class="mega-col">
+                    <a class="mega-head" href="#markets">氨基酸类<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6h7M6.5 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    <a class="mega-link" href="#markets">氨基酸</a>
+                  </div>
+                  <div class="mega-col">
+                    <a class="mega-head" href="#markets">宏观类<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6h7M6.5 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    <a class="mega-link" href="#markets">宏观经济类</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a class="nav-link" href="#markets">平衡表</a>
+
+          <div class="nav-item has-mega">
+            <a class="nav-link" href="#news" aria-haspopup="true" aria-expanded="false" data-menu="brief">
+              行情简报
+              <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <div class="mega" role="menu" aria-label="行情简报">
+              <div class="mega-sheet">
+                <p class="mega-title">行情简报</p>
+                <div class="mega-grid">
+                  <div class="mega-col">
+                    <a class="mega-head" href="#news">概览<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6h7M6.5 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    <p>把天气、装船和基差收成三条可核对的判断。</p>
+                  </div>
+                  <div class="mega-col">
+                    <a class="mega-head" href="#news" data-tab="notice">实时快讯<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6h7M6.5 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    <p>盘中要闻、港口动态和突发提示。</p>
+                  </div>
+                  <div class="mega-col">
+                    <a class="mega-head" href="#news" data-tab="daily">每日简报<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6h7M6.5 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    <p>日度供需、压榨利润和到港节奏。</p>
+                  </div>
+                  <div class="mega-col">
+                    <a class="mega-head" href="#news" data-tab="brief">新闻早报<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6h7M6.5 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    <p>开盘前需要过一眼的重点资讯。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-item has-mega">
+            <a class="nav-link" href="./dictionary.html" aria-haspopup="true" aria-expanded="false" data-menu="dict">
+              数据字典
+              <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <div class="mega" role="menu" aria-label="数据字典">
+              <div class="mega-sheet">
+                <p class="mega-title">数据字典</p>
+                <div class="mega-grid">
+                  <div class="mega-col">
+                    <a class="mega-head" href="#markets">概览<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6h7M6.5 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    <p>指标口径、对比口径和导入入口放在同一层。</p>
+                  </div>
+                  <div class="mega-col">
+                    <a class="mega-head" href="./dictionary.html">数据字典<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6h7M6.5 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    <p>字段定义、单位和计算口径。</p>
+                  </div>
+                  <div class="mega-col">
+                    <a class="mega-head" href="#markets">指标对比<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6h7M6.5 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    <p>同一指标在不同品种间对照。</p>
+                  </div>
+                  <div class="mega-col">
+                    <a class="mega-head" href="./import.html">数据导入<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6h7M6.5 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    <p>把本地表格导入到总览里核对。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-actions">
+          <button type="button" class="nav-toggle" id="navToggle" aria-label="打开菜单" aria-controls="navLinks" aria-expanded="false">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <h1 class="display">
+          <span class="line"><span>采购数据平台</span></span>
+        </h1>
+        <p class="hero-lead">把总览、平衡表、简报和字典收在同一处，<br>给采购一个可核对的判断。</p>
+        <div class="hero-actions">
+          <a class="btn btn-dark" href="./overview.html">打开总览</a>
+          <a class="btn btn-light" href="#news">阅读简报</a>
+        </div>
+      </div>
+      <div class="globe-frame" id="globeFrame">
+        <div class="globe-stage" id="stage"></div>
+        <div class="layer-dock" hidden>
+          <fieldset class="layers" id="layers">
+            <legend class="sr">地球图层</legend>
+            <label><input type="checkbox" data-layer="currents" /><i class="swatch currents"></i>洋流</label>
+            <label><input type="checkbox" data-layer="state" /><i class="swatch rain"></i>降水</label>
+            <label><input type="checkbox" data-layer="pins" /><i class="swatch pin"></i>港口</label>
+            <label><input type="checkbox" data-layer="routes" /><i class="swatch route"></i>航线</label>
+          </fieldset>
+          <button type="button" class="layer-orb" id="layerOrb" aria-expanded="false" aria-controls="layers" title="图层">
+            <i class="swatch currents"></i>
+            <i class="swatch rain"></i>
+            <i class="swatch pin"></i>
+            <i class="swatch route"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter desire" id="news">
+      <div class="desire-grid">
+        <div class="desire-pin">
+          <h2 class="inline-heading">
+            <span class="line"><span>这一周怎么买</span></span>
+            <span class="line"><span>看产区与到港</span></span>
+          </h2>
+          <p class="desire-lead">简报把天气、装船和基差收成三条可核对的判断。</p>
+          <div class="news-tabs" role="tablist">
+            <button type="button" class="is-active" data-tab="notice">实时快讯</button>
+            <button type="button" data-tab="daily">每日简报</button>
+            <button type="button" data-tab="brief">新闻早报</button>
+          </div>
+          <div class="quote-photos" id="quotePhotos"></div>
+        </div>
+        <div class="quote-list" id="quoteList"></div>
+      </div>
+    </section>
+
+    <section class="chapter markets" id="markets">
+      <div class="market-head">
+        <h2>行情监测</h2>
+        <div class="sorts" role="group" aria-label="排序">
+          <button type="button" data-sort="volume">成交<span class="arrows">▲▼</span></button>
+          <button type="button" data-sort="openInterest">持仓<span class="arrows">▲▼</span></button>
+          <button type="button" data-sort="change">涨跌<span class="arrows">▲▼</span></button>
+        </div>
+      </div>
+      <div class="bento" id="bento"></div>
+    </section>
+
+    <section class="chapter corridors" id="corridors">
+      <h2 class="inline-heading">从产区到港口</h2>
+      <div class="accordion" id="accordion">
+        <article class="acc-panel is-open" data-panel tabindex="0">
+          <img src="https://picsum.photos/seed/gulfport/1600/1200" alt="" />
+          <div class="acc-copy">
+            <h3>美湾装船</h3>
+            <p>新奥尔良近月船期询盘增加，升贴水持稳。</p>
+          </div>
+        </article>
+        <article class="acc-panel" data-panel tabindex="0">
+          <img src="https://picsum.photos/seed/santosport/1600/1200" alt="" />
+          <div class="acc-copy">
+            <h3>巴西桑托斯</h3>
+            <p>压榨开机与装船窗口同步，关注南美降水南压。</p>
+          </div>
+        </article>
+        <article class="acc-panel" data-panel tabindex="0">
+          <img src="https://picsum.photos/seed/qingdaoharbor/1600/1200" alt="" />
+          <div class="acc-copy">
+            <h3>国内到港</h3>
+            <p>青岛下周集中到港，油厂开机维持高位。</p>
+          </div>
+        </article>
+        <article class="acc-panel" data-panel tabindex="0">
+          <img src="https://picsum.photos/seed/basisboard/1600/1200" alt="" />
+          <div class="acc-copy">
+            <h3>基差窗口</h3>
+            <p>豆粕基差华东持平，华南小幅走弱。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="chapter action">
+      <h2>各品种数据，一处核对</h2>
+      <a class="btn btn-light" href="./overview.html">打开数据总览</a>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="#top">友情链接</a>
+        <a href="#top">法律声明</a>
+        <a href="#top">个人信息保护政策</a>
+      </div>
+      <p>© 温氏科技创新中心 中国广东省广州市天河区五山路493号华南农业大学湿地公园附近 邮编: 510642 粤ICP备88888888号 本网站支持IPv6访问</p>
+    </footer>
+  </main>
+  <script src="./vendor/gsap.min.js"></script>
+  <script src="./vendor/ScrollTrigger.min.js"></script>
+  <script src="./nav.js?v=mega3"></script>
+  <script type="module" src="./main.js?v=fix5"></script>
+</body>
+</html>
